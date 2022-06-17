@@ -8,7 +8,7 @@ import datetime
 
 config(title="Karkasi", description="和朋友一起记账！",theme="sketchy")
 def main():  # PyWebIO application function
-    img=open("./logo.jpg", 'rb').read()
+    img=open("./images/logo.jpg", 'rb').read()
     put_image(img, width='150px')
     put_image(img, width='150px')
     put_image(img, width='150px')
