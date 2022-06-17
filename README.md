@@ -11,7 +11,7 @@
 
 ## 界面
 <br/>
-<img src="./image/ui.png">
+<img src="./images/ui.png">
 <br/>
 
 ## 基本功能
