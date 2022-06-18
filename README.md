@@ -9,6 +9,13 @@
   </p>
 </div>
 
+## 目录
+1. [更新进度](#更新进度)  
+2. [食用方法](#食用方法)  
+3. [可能用到的小知识](#可能用到的小知识)  
+    - [如何保持后台运行？](#如何保持后台运行？)  
+    - [如何关闭这个程序？](#如何关闭这个程序？)  
+
 ## 界面
 <br/>
 <img src="./images/ui.png">
@@ -22,3 +29,23 @@
 - [x] 更新记录
 - [ ] 记录排序
 - [ ] 输入不同密码进入不同账本（即多人，多情况对应可能）
+
+## 食用方法
+```shell
+git clone https://github.com/SkyoKen/Karkasi
+dnf install git
+cd Karkasi
+python app.py
+```
+
+## 可能用到的小知识
+### 如何保持后台运行？
+nohup python app.py & 
+
+### 如何关闭这个程序？
+1. 通过端口反查进程号'netstat -nlp | grep 端口'
+2. 根据命令查找进程'ps -ef|grep python'
+
+然后'kill 进程号'
+
+
