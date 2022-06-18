@@ -13,8 +13,8 @@
 1. [更新进度](#更新进度)  
 2. [食用方法](#食用方法)  
 3. [可能用到的小知识](#可能用到的小知识)  
-    - [如何保持后台运行？](#如何保持后台运行？)  
-    - [如何关闭这个程序？](#如何关闭这个程序？)  
+    - [如何保持后台运行](#如何保持后台运行)  
+    - [如何关闭这个程序](#如何关闭这个程序)  
 
 ## 界面
 <br/>
@@ -33,16 +33,17 @@
 ## 食用方法
 ```shell
 git clone https://github.com/SkyoKen/Karkasi
-dnf install git
+sudo pip3 install pywebio pandas
 cd Karkasi
 python app.py
 ```
 
 ## 可能用到的小知识
-### 如何保持后台运行？
+### 如何保持后台运行
+```
 nohup python app.py & 
-
-### 如何关闭这个程序？
+```
+### 如何关闭这个程序
 1. 通过端口反查进程号'netstat -nlp | grep 端口'
 2. 根据命令查找进程'ps -ef|grep python'
 
