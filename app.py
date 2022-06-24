@@ -123,7 +123,7 @@ def _save(index,date,item,price,currency,web,status,time):
     else:
         df=_delete2(index,df)
         df=df.append(pd.Series(data, index=df.columns,name=index))
-    
+    df=df.sort_values('date')
     df.to_csv('Ledger.csv',index=False)
     close_popup()
     _update()
