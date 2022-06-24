@@ -1,4 +1,4 @@
-from contextlib import nullcontext
+#from contextlib import nullcontext
 from pywebio import *
 from pywebio.output import *
 from pywebio.input import *
@@ -40,7 +40,7 @@ def _new():
         put_select(name='currency', label='币种',value='JPY',options=['JPY', 'CNY']),
         put_input(name='web',label='网址', type=TEXT),
         put_select(name='status', label='状态',value='申请中',options=['申请中', '已通过', '已结清']),
-        put_buttons(['确定','关闭'], onclick=[lambda : _save(-1,pin.date,pin.item,pin.price,pin.currency,pin.web,pin.status,datetime.now().date()),lambda : close_popup()])
+        put_buttons(['确定','关闭'], onclick=[lambda : _save(-1,pin.date,pin.item,pin.price,pin.currency,pin.web,pin.status,datetime.now()),lambda : close_popup()])
 ])
 
 #修改记录
