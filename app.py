@@ -99,13 +99,40 @@ def _update():
     df.loc['合计']['price'] =total
     
     # 修改显示的列名
-    df.columns=['日期','项目','金额','币种','网址','状态','更新时间','操作人']
+    df.columns=['日期','项目','金额','币种','网址','状态','更新时间','最后操作人']
+    df=df.drop(columns=['网址'])
     #NaN不显示
     df=df.fillna('')
-    
+
+    df1=df.loc[df['状态']=='申请中']
+    df1=df1.drop(columns=['状态'])
+    total= df1['金额'].sum() 
+    df1.loc['合计',:] = ''
+    df1.loc['合计']['金额'] =total
+
+    df2=df.loc[df['状态']=='已通过']
+    df2=df2.drop(columns=['状态'])
+    total= df2['金额'].sum() 
+    df2.loc['合计',:] = ''
+    df2.loc['合计']['金额'] =total
+
+
+    df3=df.loc[df['状态']=='已结清']    
+    df3=df3.drop(columns=['状态'])
+    total= df3['金额'].sum() 
+    df3.loc['合计',:] = ''
+    df3.loc['合计']['金额'] =total
+
     # 输出csv
     with use_scope('scope2', clear=True):
-        put_html(df.to_html(border=0))
+        #put_html(df.to_html(border=0))
+        put_tabs([
+            {'title': '总表', 'content': put_html(df.to_html(border=0))},
+            {'title': '申请中', 'content': put_html(df1.to_html(border=0))},
+            {'title': '已通过', 'content': put_html(df2.to_html(border=0))},
+            {'title': '已结清', 'content': put_html(df3.to_html(border=0))},
+        ])
+        
     print("update ok")
 
 #写入csv
